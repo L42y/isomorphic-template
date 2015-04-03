@@ -11,5 +11,6 @@ module.exports = {
     loaders: [
       {test: /\.js$/, loader: 'babel-loader'}
     ]
-  }
+  },
+  devtool: 'inline-source-map'
 };
