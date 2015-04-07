@@ -5,8 +5,8 @@
   "main": "index.js",
   "browser": "browser.js",
   "scripts": {
-    "start": "babel ./index.js | node --harmony",
-    "nodemon": "nodemon",
+    "start": "node tmp/server.bundle.js",
+    "nodemon": "nodemon tmp/server.bundle.js",
     "webpack": "webpack -w --debug",
     "postinstall": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"

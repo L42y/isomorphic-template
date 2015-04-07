@@ -1,7 +1,5 @@
 'use strict';
 
-require("babel/register");
-
 let fs = require('fs');
 let Hapi = require('hapi');
 let React = require('react');

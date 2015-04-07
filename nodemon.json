@@ -1,5 +1,0 @@
-{
-  "execMap": {
-    "js": "babel {{filename}} | node --harmony"
-  }
-}
