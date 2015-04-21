@@ -7,7 +7,7 @@ var commonLoaders = [
 module.exports = [{
   name: 'client-side',
   cache: true,
-  entry: './browser',
+  entry: './index.browser',
   output: {
     path: './tmp',
     filename: 'browser.bundle.js'
