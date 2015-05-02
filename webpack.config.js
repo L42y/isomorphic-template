@@ -7,10 +7,10 @@ var commonLoaders = [
 module.exports = [{
   name: 'client-side',
   cache: true,
-  entry: './index.browser',
+  entry: './index.web',
   output: {
     path: './tmp',
-    filename: 'browser.bundle.js'
+    filename: 'web.bundle.js'
   },
   module: {
     loaders: commonLoaders

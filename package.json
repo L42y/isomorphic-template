@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "browser": "index.browser.js",
+  "browser": "index.web.js",
   "scripts": {
     "start": "node tmp/server.bundle.js",
     "nodemon": "nodemon tmp/server.bundle.js",
