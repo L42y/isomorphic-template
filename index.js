@@ -34,6 +34,14 @@ server.route([{
     });
   }
 }, {
+  path: '/favicon.ico',
+  method: 'GET',
+  handler: {
+    file: {
+      path: 'public/favicon.ico'
+    }
+  }
+}, {
   path: '/_/{param*}',
   method: 'GET',
   handler: {
