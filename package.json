@@ -5,9 +5,8 @@
   "main": "index.js",
   "browser": "index.web.js",
   "scripts": {
+    "dev": "concurrent -p command 'nodemon tmp/server.bundle.js' 'webpack -w --debug'",
     "start": "node tmp/server.bundle.js",
-    "nodemon": "nodemon tmp/server.bundle.js",
-    "webpack": "webpack -w --debug",
     "postinstall": "webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +21,7 @@
     "webpack": "^1.7.3"
   },
   "devDependencies": {
+    "concurrently": "0.0.5",
     "nodemon": "^1.3.7"
   },
   "engines": {
