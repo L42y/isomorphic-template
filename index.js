@@ -1,11 +1,12 @@
 'use strict';
 
-let fs = require('fs');
-let Hapi = require('hapi');
+const fs = require('fs');
+const Hapi = require('hapi');
 const Inert = require('inert');
-let React = require('react');
-let Router = require('react-router');
-let routes = require('./routes');
+const React = require('react');
+const Router = require('react-router');
+
+import routes from './routes.js';
 
 let server = new Hapi.Server({
   connections: {

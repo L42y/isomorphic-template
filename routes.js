@@ -1,10 +1,10 @@
 'use strict';
 
-let React = require('react');
-let Router = require('react-router');
-let {Route, RouteHandler, DefaultRoute} = Router;
+const React = require('react');
+const Router = require('react-router');
+const {Route, RouteHandler, DefaultRoute} = Router;
 
-let App = React.createClass({
+const App = React.createClass({
   render() {
     return (
       <RouteHandler/>
@@ -12,9 +12,9 @@ let App = React.createClass({
   }
 });
 
-let routes = (
+const routes = (
   <Route name="app" path="/" handler={App}>
   </Route>
 );
 
-module.exports = routes;
+export default routes;

@@ -1,10 +1,10 @@
 'use strict';
 
-var commonLoaders = [
+let commonLoaders = [
   {test: /\.js$/, loader: 'babel-loader'}
 ];
 
-module.exports = [{
+export default [{
   name: 'client-side',
   cache: true,
   entry: './index.web',

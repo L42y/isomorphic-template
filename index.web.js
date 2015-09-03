@@ -1,8 +1,9 @@
 'use strict';
 
-let React = require('react');
-let Router = require('react-router');
-let routes = require('./routes');
+const React = require('react');
+const Router = require('react-router');
+
+import routes from './routes.js';
 
 Router.run(routes, Router.HistoryLocation, function(Handler) {
   React.render(<Handler/>, document.getElementById('react-root'));
