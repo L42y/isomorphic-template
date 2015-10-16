@@ -29,5 +29,5 @@ export default [{
   module: {
     loaders: commonLoaders
   },
-  externals: /^[a-z\-0-9]+$/
+  externals: /^[a-z\/\-0-9]+$/
 }];

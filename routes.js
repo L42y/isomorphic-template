@@ -1,19 +1,19 @@
 'use strict';
 
-const React = require('react');
-const Router = require('react-router');
-const {Route, RouteHandler, DefaultRoute} = Router;
+import React from 'react';
+import {Route, DefaultRoute} from 'react-router';
 
-const App = React.createClass({
-  render() {
-    return (
-      <RouteHandler/>
-    );
-  }
-});
+const App = ({...props}) => {
+  return (
+    <div>
+      {props.children}
+    </div>
+  );
+};
 
 const routes = (
-  <Route name="app" path="/" handler={App}>
+  <Route path="/"
+         component={App}>
   </Route>
 );
 

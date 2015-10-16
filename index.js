@@ -1,23 +1,20 @@
 'use strict';
 
-const fs = require('fs');
-const Hapi = require('hapi');
-const Inert = require('inert');
-const React = require('react');
-const Router = require('react-router');
+import fs from 'fs';
+import {Server} from 'hapi';
+import {badImplementation, notFound} from 'boom';
+import Inert from 'inert';
+import React from 'react';
+import {renderToString} from 'react-dom/server';
+import {match, RoutingContext} from 'react-router';
 
 import routes from './routes.js';
 
-let server = new Hapi.Server({
+let server = new Server({
   connections: {
     router: {
       isCaseSensitive: false,
       stripTrailingSlash: true
-    },
-    routes: {
-      files: {
-        relativeTo: __dirname
-      }
     }
   }
 });
@@ -31,10 +28,18 @@ server.route({
   path: '/{params*}',
   method: 'GET',
   handler: function(request, reply) {
-    Router.run(routes, request.path, function(Handler) {
-      let markup = React.renderToString(<Handler/>);
+    match({routes, location: request.url.href}, (error, redirectLocation, renderProps) => {
+      if (error) {
+        return reply(badImplementation(error.message));
+      } else if (redirectLocation) {
+        return reply.redirect(redirectLocation.pathname + redirectLocation.search);
+      } else if (renderProps) {
+        const markup = renderToString(<RoutingContext {...renderProps}/>);
 
-      return reply(TEMPLATE.replace(OOPS, markup));
+        return reply(TEMPLATE.replace(OOPS, markup));
+      } else {
+        return reply(notFound());
+      }
     });
   }
 });

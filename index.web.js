@@ -1,10 +1,15 @@
 'use strict';
 
-const React = require('react');
-const Router = require('react-router');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Router from 'react-router';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 
 import routes from './routes.js';
 
-Router.run(routes, Router.HistoryLocation, function(Handler) {
-  React.render(<Handler/>, document.getElementById('react-root'));
-});
+let history = createBrowserHistory();
+
+ReactDOM.render(
+  <Router history={history}>{routes}</Router>,
+  document.getElementById('react-root')
+);
