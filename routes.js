@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import {Route, DefaultRoute} from 'react-router';
+import {Route, IndexRoute} from 'react-router';
 
 const App = ({...props}) => {
   return (
@@ -11,9 +11,16 @@ const App = ({...props}) => {
   );
 };
 
+const Hello = ({...props}) => {
+  return (
+    <div>Hello, World!</div>
+  );
+};
+
 const routes = (
   <Route path="/"
          component={App}>
+    <IndexRoute component={Hello}/>
   </Route>
 );
 
