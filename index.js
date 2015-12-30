@@ -73,7 +73,7 @@ server.route({
 
 server.register(Inert, (err) => {
   if (err) {
-    console.log('Failed to load module `inert`');
+    console.error('Failed to load module `inert`');
   } else {
     server.route([{
       path: '/favicon.ico',
