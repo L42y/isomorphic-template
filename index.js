@@ -102,7 +102,11 @@ server.register(Inert, (err) => {
     }]);
 
     server.start((err) => {
-      console.log('server started at: ' + server.info.uri);
+      if (err) {
+        console.error(err);
+      } else {
+        console.log(`server started at: ${server.info.uri}`);
+      }
     });
   }
 });
