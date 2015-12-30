@@ -1,10 +1,14 @@
 'use strict';
 
-let commonLoaders = [
-  {test: /\.js$/, loader: 'babel-loader'}
-];
+let commonLoaders = [{
+  test: /\.js$/,
+  query: {
+    presets: ['react', 'es2015', 'stage-2']
+  },
+  loader: 'babel'
+}];
 
-export default [{
+module.exports = [{
   name: 'client-side',
   cache: true,
   entry: './index.web',
