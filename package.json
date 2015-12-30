@@ -5,9 +5,9 @@
   "main": "index.js",
   "browser": "index.web.js",
   "scripts": {
-    "dev": "concurrent -p command 'nodemon -e js,html ./tmp/server.bundle.js' 'webpack -w --debug'",
-    "start": "node tmp/server.bundle.js",
-    "postinstall": "webpack -p",
+    "dev": "NODE_ENV=development concurrent -p command 'nodemon -e js,html ./tmp/server.bundle.js' 'webpack -w --debug'",
+    "start": "NODE_ENV=production node tmp/server.bundle.js",
+    "postinstall": "NODE_ENV=production webpack -p",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "L42y",
