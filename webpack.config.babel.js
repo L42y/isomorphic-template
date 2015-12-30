@@ -1,6 +1,6 @@
 'use strict';
 
-let commonLoaders = [{
+const commonLoaders = [{
   test: /\.js$/,
   query: {
     presets: ['react', 'es2015', 'stage-2']
