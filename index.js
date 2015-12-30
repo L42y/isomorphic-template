@@ -5,7 +5,7 @@ import {Server} from 'hapi';
 import {badImplementation, notFound} from 'boom';
 import Inert from 'inert';
 import React from 'react';
-import {renderToString} from 'react-dom/server';
+import {renderToString, renderToStaticMarkup} from 'react-dom/server';
 import {match, RoutingContext} from 'react-router';
 
 import routes from './routes.js';
@@ -24,6 +24,33 @@ server.connection({
   port: process.env.PORT || 4444
 });
 
+const generateTemplate = ({title, markup}) => {
+  const html = renderToStaticMarkup(
+    <html>
+      <head>
+        <meta charSet="utf-8"/>
+        <meta httpEquiv="x-ua-compatible"
+              content="ie=edge"/>
+        <title>{title}</title>
+        <meta name="description"
+              content=""/>
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1"/>
+      </head>
+
+      <body>
+        <div id="react-root"
+             dangerouslySetInnerHTML={{__html: markup}}>
+        </div>
+
+        <script src="/!/web.bundle.js"></script>
+      </body>
+    </html>
+  );
+
+  return `<!doctype html>${html}`;
+};
+
 server.route({
   path: '/{params*}',
   method: 'GET',
@@ -36,16 +63,13 @@ server.route({
       } else if (renderProps) {
         const markup = renderToString(<RoutingContext {...renderProps}/>);
 
-        return reply(TEMPLATE.replace(OOPS, markup));
+        return reply(generateTemplate({markup}));
       } else {
         return reply(notFound());
       }
     });
   }
 });
-
-const OOPS = 'Oops, something went wrong.';
-const TEMPLATE = fs.readFileSync('./index.html', {encoding: 'utf8'});
 
 server.register(Inert, (err) => {
   if (err) {
