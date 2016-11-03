@@ -6,7 +6,7 @@ import {badImplementation, notFound} from 'boom';
 import Inert from 'inert';
 import React from 'react';
 import {renderToString, renderToStaticMarkup} from 'react-dom/server';
-import {match, RoutingContext} from 'react-router';
+import {match, RouterContext} from 'react-router';
 
 import routes from './routes.js';
 
@@ -61,7 +61,7 @@ server.route({
       } else if (redirectLocation) {
         return reply.redirect(redirectLocation.pathname + redirectLocation.search);
       } else if (renderProps) {
-        const markup = renderToString(<RoutingContext {...renderProps}/>);
+        const markup = renderToString(<RouterContext {...renderProps}/>);
 
         return reply(generateTemplate({markup}));
       } else {

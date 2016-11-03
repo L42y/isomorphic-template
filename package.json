@@ -14,12 +14,11 @@
   "dependencies": {
     "boom": "^3.1.1",
     "hapi": "^11.1.4",
-    "history": "^1.17.0",
     "inert": "^3.2.0",
     "isomorphic-fetch": "^2.2.0",
     "react": "^0.14.5",
     "react-dom": "^0.14.5",
-    "react-router": "^1.0.3"
+    "react-router": "^3.0.0"
   },
   "devDependencies": {
     "babel": "^6.3.26",
