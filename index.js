@@ -10,7 +10,7 @@ import {match, RouterContext} from 'react-router';
 
 import routes from './routes.js';
 
-let server = new Server({
+const server = new Server({
   connections: {
     router: {
       isCaseSensitive: false,
