@@ -1,6 +1,5 @@
 'use strict';
 
-import fs from 'fs';
 import {Server} from 'hapi';
 import {badImplementation, notFound} from 'boom';
 import Inert from 'inert';
