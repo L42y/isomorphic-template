@@ -1,19 +1,27 @@
 'use strict';
 
 import React from 'react';
-import {Route, IndexRoute} from 'react-router';
+import {Link, Route, IndexRoute} from 'react-router';
 
-const App = ({...props}) => {
+const App = ({children}) => {
   return (
     <div>
-      {props.children}
+      {children}
     </div>
   );
 };
 
-const Hello = ({...props}) => {
+const Hello = () => {
   return (
-    <div>Hello, World!</div>
+    <div>
+      Hello, <Link to="/world">World!</Link>
+    </div>
+  );
+};
+
+const World = () => {
+  return (
+    <div>Hola</div>
   );
 };
 
@@ -21,6 +29,8 @@ const routes = (
   <Route path="/"
          component={App}>
     <IndexRoute component={Hello}/>
+    <Route path="world"
+           component={World}/>
   </Route>
 );
 
