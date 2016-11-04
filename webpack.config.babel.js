@@ -13,7 +13,7 @@ module.exports = [{
   cache: true,
   entry: './index.web',
   output: {
-    path: './tmp',
+    path: './tmp/web',
     filename: 'web.bundle.js'
   },
   module: {
@@ -26,7 +26,7 @@ module.exports = [{
   entry: './index',
   target: 'node',
   output: {
-    path: './tmp',
+    path: './tmp/server',
     filename: 'server.bundle.js',
     libraryTarget: 'commonjs2'
   },

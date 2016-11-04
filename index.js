@@ -95,7 +95,7 @@ server.register(Inert, (err) => {
       method: 'GET',
       handler: {
         directory: {
-          path: 'tmp'
+          path: 'tmp/web'
         }
       }
     }]);
