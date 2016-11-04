@@ -19,7 +19,7 @@ module.exports = [{
   module: {
     loaders: commonLoaders
   },
-  devtool: 'inline-source-map'
+  devtool: 'source-map'
 }, {
   name: 'server-side rendering',
   cache: true,
@@ -33,5 +33,6 @@ module.exports = [{
   module: {
     loaders: commonLoaders
   },
+  devtool: 'source-map',
   externals: /^[a-z\/\-0-9]+$/
 }];
