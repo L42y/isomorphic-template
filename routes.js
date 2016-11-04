@@ -1,6 +1,6 @@
 'use strict';
 
-import React from 'react';
+import React, {PropTypes} from 'react';
 import {Link, Route, IndexRoute} from 'react-router';
 
 const App = ({children}) => {
@@ -9,6 +9,10 @@ const App = ({children}) => {
       {children}
     </div>
   );
+};
+
+App.propTypes = {
+  children: PropTypes.node.isRequired
 };
 
 const Hello = () => {
