@@ -13,7 +13,7 @@
   "author": "L42y",
   "dependencies": {
     "boom": "^4.2.0",
-    "hapi": "^15.2.0",
+    "hapi": "^16.0.0",
     "inert": "^4.0.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
