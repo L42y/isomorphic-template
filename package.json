@@ -27,7 +27,7 @@
     "babel-preset-stage-2": "^6.18.0",
     "concurrently": "3.1.0",
     "nodemon": "^1.11.0",
-    "webpack": "^1.13.3"
+    "webpack": "^1.14.0"
   },
   "engines": {
     "node": "7.0.0"
