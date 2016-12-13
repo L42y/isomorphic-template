@@ -1,5 +1,9 @@
 'use strict';
 
+const webpack = require('webpack');
+
+const isProduction = process.env['NODE_ENV'] === 'production';
+
 const commonLoaders = [{
   test: /\.js$/,
   query: {
@@ -19,6 +23,17 @@ module.exports = [{
   module: {
     loaders: commonLoaders
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env['NODE_ENV'])
+      }
+    }),
+  ].concat(isProduction ? [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(true),
+    new webpack.optimize.UglifyJsPlugin()
+  ] : []),
   devtool: 'source-map'
 }, {
   name: 'server-side rendering',
