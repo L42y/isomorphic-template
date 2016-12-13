@@ -6,7 +6,7 @@ const isProduction = process.env['NODE_ENV'] === 'production';
 
 const commonLoaders = [{
   test: /\.js$/,
-  loader: 'babel'
+  loader: 'babel-loader'
 }];
 
 module.exports = [{
