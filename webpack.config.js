@@ -6,9 +6,6 @@ const isProduction = process.env['NODE_ENV'] === 'production';
 
 const commonLoaders = [{
   test: /\.js$/,
-  query: {
-    presets: ['react', 'es2015', 'stage-2']
-  },
   loader: 'babel'
 }];
 
