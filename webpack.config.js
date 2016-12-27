@@ -1,6 +1,7 @@
 'use strict';
 
 const webpack = require('webpack');
+const nodeExternals = require('webpack-node-externals');
 
 const isProduction = process.env['NODE_ENV'] === 'production';
 
@@ -45,5 +46,5 @@ module.exports = [{
     loaders: commonLoaders
   },
   devtool: 'source-map',
-  externals: /^[a-z\/\-0-9]+$/
+  externals: [nodeExternals()]
 }];
