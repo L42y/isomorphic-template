@@ -13,21 +13,21 @@
   "author": "L42y",
   "dependencies": {
     "boom": "^4.2.0",
-    "hapi": "^15.2.0",
-    "inert": "^4.0.2",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "hapi": "^16.0.2",
+    "inert": "^4.0.3",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
     "react-router": "^3.0.0"
   },
   "devDependencies": {
-    "babel-core": "^6.18.2",
-    "babel-loader": "^6.2.7",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
     "babel-preset-env": "^1.1.4",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "concurrently": "3.1.0",
     "nodemon": "^1.11.0",
-    "webpack": "^1.13.3"
+    "webpack": "^1.14.0"
   },
   "engines": {
     "node": "7.0.0"
