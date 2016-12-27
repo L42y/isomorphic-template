@@ -1,5 +1,7 @@
 'use strict';
 
+import './index.web.css';
+
 import React from 'react';
 import {render} from 'react-dom';
 import {Router, browserHistory} from 'react-router';

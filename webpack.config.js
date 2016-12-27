@@ -2,6 +2,7 @@
 
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const isProduction = process.env['NODE_ENV'] === 'production';
 
@@ -19,9 +20,13 @@ module.exports = [{
     filename: 'web.bundle.js'
   },
   module: {
-    loaders: commonLoaders
+    loaders: commonLoaders.concat([{
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract('css-loader?sourceMap')
+    }])
   },
   plugins: [
+    new ExtractTextPlugin('web.bundle.css'),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env['NODE_ENV'])
@@ -43,7 +48,10 @@ module.exports = [{
     filename: 'server.bundle.js'
   },
   module: {
-    loaders: commonLoaders
+    loaders: commonLoaders.concat([{
+      test: /\.css$/,
+      loader: 'css-loader/locals'
+    }])
   },
   devtool: 'source-map',
   externals: [nodeExternals()]
