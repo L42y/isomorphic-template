@@ -1,3 +1,10 @@
 {
-  "presets": ["react", "es2015", "stage-2"]
+  "presets": ["react", [
+    "env", {
+      "targets": {
+        "node": "current",
+        "browsers": ["last 2 versions"]
+      },
+      "useBuiltIns": true
+    }], "stage-0"]
 }
