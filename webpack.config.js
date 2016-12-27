@@ -39,8 +39,7 @@ module.exports = [{
   target: 'node',
   output: {
     path: './tmp/server',
-    filename: 'server.bundle.js',
-    libraryTarget: 'commonjs2'
+    filename: 'server.bundle.js'
   },
   module: {
     loaders: commonLoaders
