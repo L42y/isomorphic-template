@@ -20,22 +20,29 @@ module.exports = [{
     filename: 'web.bundle.js'
   },
   module: {
-    loaders: commonLoaders.concat([{
+    rules: commonLoaders.concat([{
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('css-loader?sourceMap')
+      loader: ExtractTextPlugin.extract({
+        loader: 'css-loader?sourceMap'
+      })
     }])
   },
   plugins: [
-    new ExtractTextPlugin('web.bundle.css'),
+    new webpack.LoaderOptionsPlugin({
+      minimize: isProduction
+    }),
+    new ExtractTextPlugin({
+      filename: 'web.bundle.css'
+    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env['NODE_ENV'])
       }
-    }),
+    })
   ].concat(isProduction ? [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(true),
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true
+    })
   ] : []),
   devtool: 'source-map'
 }, {
@@ -48,7 +55,7 @@ module.exports = [{
     filename: 'server.bundle.js'
   },
   module: {
-    loaders: commonLoaders.concat([{
+    rules: commonLoaders.concat([{
       test: /\.css$/,
       loader: 'css-loader/locals'
     }])
