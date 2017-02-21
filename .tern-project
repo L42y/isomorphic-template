@@ -6,6 +6,7 @@
   ],
   "plugins": {
     "node": {},
+    "webpack": {},
     "es_modules": {},
     "complete_strings": {}
   }
