@@ -30,7 +30,7 @@
     "extract-text-webpack-plugin": "^2.0.0-beta.5",
     "nodemon": "^1.11.0",
     "webpack": "^2.2.0",
-    "webpack-node-externals": "^1.5.4"
+    "webpack-node-externals": "^1.6.0"
   },
   "engines": {
     "node": ">= 7.6.0"
