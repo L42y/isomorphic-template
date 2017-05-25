@@ -12,7 +12,7 @@
   },
   "author": "L42y",
   "dependencies": {
-    "boom": "^4.2.0",
+    "boom": "^5.0.0",
     "hapi": "^16.0.2",
     "inert": "^4.0.3",
     "react": "^15.4.1",
