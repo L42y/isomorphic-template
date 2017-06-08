@@ -1,5 +1,6 @@
 'use strict';
 
+const {join} = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -7,8 +8,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const isProduction = process.env['NODE_ENV'] === 'production';
 
 const commonLoaders = [{
+  use: 'babel-loader',
   test: /\.js$/,
-  loader: 'babel-loader'
 }];
 
 module.exports = [{
@@ -16,14 +17,14 @@ module.exports = [{
   cache: true,
   entry: './index.web',
   output: {
-    path: './tmp/web',
+    path: join(__dirname, 'tmp/web'),
     filename: 'web.bundle.js'
   },
   module: {
     rules: commonLoaders.concat([{
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract({
-        loader: 'css-loader?sourceMap'
+      use: ExtractTextPlugin.extract({
+        use: 'css-loader?sourceMap'
       })
     }])
   },
@@ -51,13 +52,13 @@ module.exports = [{
   entry: './index',
   target: 'node',
   output: {
-    path: './tmp/server',
+    path: join(__dirname, 'tmp/server'),
     filename: 'server.bundle.js'
   },
   module: {
     rules: commonLoaders.concat([{
       test: /\.css$/,
-      loader: 'css-loader/locals'
+      use: 'css-loader/locals'
     }])
   },
   devtool: 'source-map',
