@@ -42,6 +42,7 @@ module.exports = [{
       }
     })
   ].concat(isProduction ? [
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: true
     })
