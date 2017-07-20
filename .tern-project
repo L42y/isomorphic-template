@@ -1,8 +1,7 @@
 {
   "libs": [
-    "ecma5",
-    "ecma6",
-    "browser"
+    "browser",
+    "ecmascript"
   ],
   "plugins": {
     "node": {},
