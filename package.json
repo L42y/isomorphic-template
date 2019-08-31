@@ -1,38 +1,38 @@
 {
   "name": "isomorphic-template",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "browser": "index.web.js",
-  "scripts": {
-    "dev": "NODE_ENV=development concurrently 'nodemon ./tmp/server/server.bundle.js' 'webpack -w -d'",
-    "start": "NODE_ENV=production node tmp/server/server.bundle.js",
-    "postinstall": "NODE_ENV=production webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "L42y",
-  "dependencies": {
-    "boom": "^4.2.0",
-    "hapi": "^16.0.2",
-    "inert": "^4.0.3",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-router": "^3.0.0"
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack",
+    "start": "cross-env NODE_ENV=development concurrently 'lerna run --parallel dev:server' 'webpack'"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
-    "babel-core": "^6.24.0",
-    "babel-loader": "^7.1.0",
-    "babel-preset-env": "^1.5.0",
-    "babel-preset-react": "^6.24.0",
-    "babel-preset-stage-0": "^6.24.0",
-    "concurrently": "3.4.0",
-    "css-loader": "^0.28.1",
-    "extract-text-webpack-plugin": "^2.1.0",
-    "nodemon": "^1.11.0",
-    "webpack": "^3.0.0",
-    "webpack-node-externals": "^1.6.0"
-  },
-  "engines": {
-    "node": ">= 7.6.0"
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/webpack": "^4.39.1",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^4.1.2",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.2.0",
+    "fast-async": "^6.3.8",
+    "jsxstyle-webpack-plugin": "^1.1.6",
+    "lerna": "^3.16.4",
+    "mini-css-extract-plugin": "^0.8.0",
+    "postcss-discard-duplicates": "^4.0.2",
+    "postcss-loader": "^3.0.0",
+    "safe-require": "^1.0.3",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.42",
+    "typescript": "^3.6.2",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7",
+    "webpack-manifest-plugin": "^2.0.4"
   }
 }

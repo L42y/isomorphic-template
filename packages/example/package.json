@@ -1,0 +1,19 @@
+{
+  "name": "example",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:server": "ts-node-dev --respawn --no-notify server.ts"
+  },
+  "dependencies": {
+    "@apollo/react-common": "^3.0.1",
+    "@apollo/react-hooks": "^3.0.1",
+    "apollo-boost": "^0.4.4",
+    "graphql-tag": "^2.10.1",
+    "isomorphic-fetch": "^2.2.1",
+    "jsxstyle": "^2.1.6",
+    "react": "^16.9.0",
+    "react-apollo": "^3.0.1",
+    "react-dom": "^16.9.0"
+  }
+}

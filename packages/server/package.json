@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "@apollo/react-common": "^3.0.1",
+    "@apollo/react-ssr": "^3.0.1",
+    "@hapi/hapi": "^18.3.2",
+    "@hapi/inert": "^5.2.1",
+    "apollo-client": "^2.6.4",
+    "apollo-utilities": "^1.3.2",
+    "graphql": "^14.5.4",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet-async": "^1.0.2",
+    "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/hapi__hapi": "^18.2.5",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-helmet-async": "^1.0.0",
+    "@types/react-router-dom": "^4.3.5"
+  }
+}
